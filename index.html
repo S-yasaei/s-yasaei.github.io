@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Samaneh Yasaei, Artist-Researcher</title>
+  <title>First Last</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
@@ -19,26 +19,73 @@
     h2 {
       margin-top: 50px;
     }
+    /* Photo section */
+    .photo-section {
+      max-width: 300px;
+      margin: 30px auto;
+      text-align: center;
+    }
+    .photo-placeholder {
+      width: 100%;
+      height: 450px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+    }
+    /* Projects */
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .project {
+      width: 300px;
+      text-align: center;
+    }
+    .project-container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+    .project-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+    .project-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      padding: 5px;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 
 <body>
 
-<h1>Samaneh Yasaei, Artist-Researcher</h1>
+<h1>First Last</h1>
 
-<p>
-Artist-researcher working at the intersection of narrative, mechanics, and material experimentation.
-</p>
+<!-- Photo section -->
+<div class="photo-section">
+  <div class="photo-placeholder">
+    Your Photo Here
+  </div>
+  <p style="margin-top: 10px;">
+    Short description about yourself, e.g., "Artist-researcher exploring the intersection of narrative, material, and mechanics."
+  </p>
+</div>
 
-<h2>Background</h2>
-<p>
-Short paragraph about your scientific background, research experience, and transition toward artistic research.
-</p>
-
-<h2>Artistic Research</h2>
-<p>
-What you explore, recurring questions, materials, methods.
-</p>
 <h2>Bio</h2>
 <p>
 Artist-researcher with a background in scientific research and artistic conception.
@@ -47,9 +94,6 @@ bridging analytical methods and poetic forms.
 </p>
 
 <h2>CV (selected)</h2>
-  <p>
-<a href="CV_FirstLast.pdf" target="_blank">Download full CV (PDF)</a>
-</p>
 <p>
 <b>Education</b><br>
 – Degree / Field, Institution, Year<br><br>
@@ -59,18 +103,51 @@ bridging analytical methods and poetic forms.
 – Artistic conception / writing / mapping projects, Year(s)<br><br>
 
 <b>Grants / Programs</b><br>
-– (if any, otherwise remove)
-</p>
-<h2>Selected Projects</h2>
-<p>
-Project 1 — one sentence.<br>
-Project 2 — one sentence.
+– (if any)
 </p>
 
-<h2>AIA Project</h2>
 <p>
-Brief description of the project supported by the AIA.
+<a href="CV_FirstLast.pdf" target="_blank">Download full CV (PDF)</a>
 </p>
+
+<h2>Projects</h2>
+<div class="projects">
+  <div class="project">
+    <div class="project-container">
+      <img src="https://via.placeholder.com/300x200.png?text=Interactivity" alt="Project 1">
+      <div class="project-title">Interactivity — physics / quantum experiments</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-container">
+      <img src="https://via.placeholder.com/300x200.png?text=Ice" alt="Project 2">
+      <div class="project-title">Ice — material and environmental exploration</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-container">
+      <img src="https://via.placeholder.com/300x200.png?text=Time-lapse" alt="Project 3">
+      <div class="project-title">Time-lapse — documenting temporal change</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-container">
+      <img src="https://via.placeholder.com/300x200.png?text=Nature+and+Time" alt="Current Project">
+      <div class="project-title">Nature and Time — current research / artistic project</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const titles = document.querySelectorAll('.project-title');
+  titles.forEach(title => {
+    title.parentElement.addEventListener('mouseover', () => { title.style.opacity = '1'; });
+    title.parentElement.addEventListener('mouseout', () => { title.style.opacity = '0'; });
+  });
+</script>
 
 </body>
 </html>
