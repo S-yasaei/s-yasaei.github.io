@@ -1,90 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>First Last</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Georgia, serif;
-      max-width: 700px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #111;
-    }
-    h1, h2 {
-      font-weight: normal;
-    }
-    h2 {
-      margin-top: 50px;
-    }
-    /* Photo section */
-    .photo-section {
-      max-width: 300px;
-      margin: 30px auto;
-      text-align: center;
-    }
-    .photo-placeholder {
-      width: 100%;
-      height: 450px;
-      background-color: #eee;
-      border: 1px solid #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #999;
-    }
-    /* Projects */
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .project {
-      width: 300px;
-      text-align: center;
-    }
-    .project-container {
-      position: relative;
-      width: 100%;
-      height: 200px;
-    }
-    .project-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: 1px solid #ccc;
-    }
-    .project-title {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s;
-      padding: 5px;
-      font-size: 0.9em;
-    }
-  </style>
-</head>
+<meta charset="UTF-8">
+<title>Samaneh Yasaei, Visual Artist-Researcher</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0 20px 100px 20px; /* espace pour la photo en bas */
+    line-height: 1.6;
+    color: #111;
+  }
+  h1,h2 {
+    font-weight: normal;
+  }
+  h2 {
+    margin-top: 50px;
+  }
+  .project {
+    margin: 50px 0;
+    cursor: pointer;
+    text-align: center;
+  }
+  .project img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+  }
+  .project-title {
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+  .project-desc {
+    font-size: 1em;
+    color: #555;
+    margin-top: 5px;
+  }
 
+  /* Modal */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+  }
+  .modal-content {
+    background-color: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 4px;
+  }
+  .modal img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .modal-close {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  /* Footer photo */
+  .footer-photo {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .footer-photo img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+  }
+  .footer-photo p {
+    margin-top: 5px;
+    font-size: 0.95em;
+    color: #333;
+  }
+</style>
+</head>
 <body>
 
 <h1>First Last</h1>
-
-<!-- Photo section -->
-<div class="photo-section">
-  <div class="photo-placeholder">
-    Your Photo Here
-  </div>
-  <p style="margin-top: 10px;">
-    Short description about yourself, e.g., "Artist-researcher exploring the intersection of narrative, material, and mechanics."
-  </p>
-</div>
 
 <h2>Bio</h2>
 <p>
@@ -111,41 +119,100 @@ bridging analytical methods and poetic forms.
 </p>
 
 <h2>Projects</h2>
-<div class="projects">
-  <div class="project">
-    <div class="project-container">
-      <img src="https://via.placeholder.com/300x200.png?text=Interactivity" alt="Project 1">
-      <div class="project-title">Interactivity — physics / quantum experiments</div>
-    </div>
-  </div>
 
-  <div class="project">
-    <div class="project-container">
-      <img src="https://via.placeholder.com/300x200.png?text=Ice" alt="Project 2">
-      <div class="project-title">Ice — material and environmental exploration</div>
-    </div>
-  </div>
+<div class="project" data-modal="modal1">
+  <img src="https://via.placeholder.com/800x400.png?text=Interactivity" alt="Interactivity">
+  <div class="project-title">Interactivity</div>
+  <div class="project-desc">Physics / Quantum experiments</div>
+</div>
 
-  <div class="project">
-    <div class="project-container">
-      <img src="https://via.placeholder.com/300x200.png?text=Time-lapse" alt="Project 3">
-      <div class="project-title">Time-lapse — documenting temporal change</div>
-    </div>
-  </div>
+<div class="project" data-modal="modal2">
+  <img src="https://via.placeholder.com/800x400.png?text=Ice" alt="Ice">
+  <div class="project-title">Ice</div>
+  <div class="project-desc">Material and environmental exploration</div>
+</div>
 
-  <div class="project">
-    <div class="project-container">
-      <img src="https://via.placeholder.com/300x200.png?text=Nature+and+Time" alt="Current Project">
-      <div class="project-title">Nature and Time — current research / artistic project</div>
-    </div>
+<div class="project" data-modal="modal3">
+  <img src="https://via.placeholder.com/800x400.png?text=Time-lapse" alt="Time-lapse">
+  <div class="project-title">Time-lapse</div>
+  <div class="project-desc">Documenting temporal change</div>
+</div>
+
+<div class="project" data-modal="modal4">
+  <img src="https://via.placeholder.com/800x400.png?text=Nature+and+Time" alt="Nature and Time">
+  <div class="project-title">Nature and Time</div>
+  <div class="project-desc">Current research / artistic project</div>
+</div>
+
+<!-- Modals -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <img src="https://via.placeholder.com/800x400.png?text=Interactivity+1">
+    <img src="https://via.placeholder.com/800x400.png?text=Interactivity+2">
+    <img src="https://via.placeholder.com/800x400.png?text=Interactivity+3">
+    <p>Details about the Interactivity project...</p>
   </div>
 </div>
 
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <img src="https://via.placeholder.com/800x400.png?text=Ice+1">
+    <img src="https://via.placeholder.com/800x400.png?text=Ice+2">
+    <p>Details about the Ice project...</p>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <img src="https://via.placeholder.com/800x400.png?text=Time-lapse+1">
+    <img src="https://via.placeholder.com/800x400.png?text=Time-lapse+2">
+    <img src="https://via.placeholder.com/800x400.png?text=Time-lapse+3">
+    <p>Details about the Time-lapse project...</p>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <img src="https://via.placeholder.com/800x400.png?text=Nature+and+Time+1">
+    <img src="https://via.placeholder.com/800x400.png?text=Nature+and+Time+2">
+    <p>Details about the Nature and Time project...</p>
+  </div>
+</div>
+
+<!-- Footer photo -->
+<div class="footer-photo">
+  <img src="https://via.placeholder.com/300x450.png?text=Your+Photo">
+  <p>Short description about yourself.</p>
+</div>
+
 <script>
-  const titles = document.querySelectorAll('.project-title');
-  titles.forEach(title => {
-    title.parentElement.addEventListener('mouseover', () => { title.style.opacity = '1'; });
-    title.parentElement.addEventListener('mouseout', () => { title.style.opacity = '0'; });
+  // Open modal
+  const projects = document.querySelectorAll('.project');
+  projects.forEach(p => {
+    p.addEventListener('click', () => {
+      const modal = document.getElementById(p.getAttribute('data-modal'));
+      modal.style.display = 'block';
+    });
+  });
+
+  // Close modal
+  const closes = document.querySelectorAll('.modal-close');
+  closes.forEach(c => {
+    c.addEventListener('click', () => {
+      c.closest('.modal').style.display = 'none';
+    });
+  });
+
+  // Click outside modal content closes modal
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(m => {
+    m.addEventListener('click', e => {
+      if(e.target === m) m.style.display = 'none';
+    });
   });
 </script>
 
