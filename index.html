@@ -5,15 +5,21 @@
 <title>Samaneh Yasaei, Visual Artist-Researcher</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+  /* dark theme */
   body {
+    background-color: #181818;     /* dark grey/black */
+    color: #eee;                   /* light text for readability */
     font-family: Georgia, serif;
     margin: 0;
     padding: 0 20px 100px 20px; /* espace pour la photo en bas */
     line-height: 1.6;
-    color: #111;
   }
-  h1,h2 {
+  a {
+    color: #81a1c1;               /* a readable accent colour */
+  }
+  h1, h2 {
     font-weight: normal;
+    color: #fff;
   }
   h2 {
     margin-top: 50px;
@@ -27,32 +33,34 @@
     width: 100%;
     max-height: 400px;
     object-fit: cover;
-    border: 1px solid #ccc;
+    border: 1px solid #444;       /* darker border */
   }
   .project-title {
     font-size: 1.5em;
     margin-top: 10px;
+    color: #fff;
   }
   .project-desc {
     font-size: 1em;
-    color: #555;
+    color: #ccc;
     margin-top: 5px;
   }
 
   /* Modal */
   .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1000; 
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.8); 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
   }
   .modal-content {
-    background-color: #fff;
+    background-color: #282828;
+    color: #eee;
     margin: 50px auto;
     padding: 20px;
     max-width: 800px;
@@ -66,6 +74,7 @@
     float: right;
     font-size: 1.5em;
     cursor: pointer;
+    color: #eee;
   }
 
   /* Footer photo */
@@ -81,12 +90,12 @@
   .footer-photo img {
     width: 100%;
     height: auto;
-    border: 1px solid #ccc;
+    border: 1px solid #444;
   }
   .footer-photo p {
     margin-top: 5px;
     font-size: 0.95em;
-    color: #333;
+    color: #ccc;
   }
 </style>
 </head>
@@ -124,78 +133,37 @@ makers. In The Age of Immediacy on Trial of Meaning
 </p>
 
 <p>
-<a href="CV-Researcher.pdf" target="_blank">Download full CV (PDF)</a>
+<a href="resources/CV-Researcher.pdf" target="_blank">Download full CV (PDF)</a>
 </p>
 
 <h2>Projects</h2>
 
-<div class="project" data-modal="modal1">
-  <img src="https://via.placeholder.com/800x400.png?text=Interactivity" alt="Interactivity">
-  <div class="project-title">Interactivity</div>
-  <div class="project-desc">Physics / Quantum experiments</div>
-</div>
-
-<div class="project" data-modal="modal2">
-  <img src="https://via.placeholder.com/800x400.png?text=Ice" alt="Ice">
-  <div class="project-title">Ice</div>
-  <div class="project-desc">Material and environmental exploration</div>
-</div>
-
-<div class="project" data-modal="modal3">
-  <img src="https://via.placeholder.com/800x400.png?text=Time-lapse" alt="Time-lapse">
-  <div class="project-title">Time-lapse</div>
-  <div class="project-desc">Documenting temporal change</div>
-</div>
-
 <div class="project" data-modal="modal4">
-  <img src="https://via.placeholder.com/800x400.png?text=Nature+and+Time" alt="Nature and Time">
-  <div class="project-title">Nature and Time</div>
+  <img src="resources/images/nature_2.png" alt="Morphogenesis (la Nature)">
+  <div class="project-title">Morphogenesis (la Nature)</div>
   <div class="project-desc">Current research / artistic project</div>
 </div>
 
 <!-- Modals -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <img src="https://via.placeholder.com/800x400.png?text=Interactivity+1">
-    <img src="https://via.placeholder.com/800x400.png?text=Interactivity+2">
-    <img src="https://via.placeholder.com/800x400.png?text=Interactivity+3">
-    <p>Details about the Interactivity project...</p>
-  </div>
-</div>
-
-<div id="modal2" class="modal">
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <img src="https://via.placeholder.com/800x400.png?text=Ice+1">
-    <img src="https://via.placeholder.com/800x400.png?text=Ice+2">
-    <p>Details about the Ice project...</p>
-  </div>
-</div>
-
-<div id="modal3" class="modal">
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <img src="https://via.placeholder.com/800x400.png?text=Time-lapse+1">
-    <img src="https://via.placeholder.com/800x400.png?text=Time-lapse+2">
-    <img src="https://via.placeholder.com/800x400.png?text=Time-lapse+3">
-    <p>Details about the Time-lapse project...</p>
-  </div>
-</div>
 
 <div id="modal4" class="modal">
   <div class="modal-content">
     <span class="modal-close">&times;</span>
-    <img src="https://via.placeholder.com/800x400.png?text=Nature+and+Time+1">
-    <img src="https://via.placeholder.com/800x400.png?text=Nature+and+Time+2">
-    <p>Details about the Nature and Time project...</p>
+    <img src="resources/images/nature_2.png" alt="Morphogenesis 1">
+    <img src="resources/images/nature_3.png" alt="Morphogenesis 2">
+    <p>Projet Nature, 2025-actuellement, observation
+des rythmes et transformations de la nature
+comme point de départ d’une exploration
+visuelle et conceptuelle.</p>
   </div>
 </div>
 
 <!-- Footer photo -->
 <div class="footer-photo">
-  <img src="https://via.placeholder.com/300x450.png?text=Your+Photo">
-  <p>Short description about yourself.</p>
+  <img src="resources/images/samane.png" alt="Samaneh Yasaei">
+  <p>Artiste et chercheuse en arts plastiques explorant les relations
+entre image, matière et mouvement, à travers la peinture, le film
+expérimental et des dispositifs mécaniques.</p>
 </div>
 
 <script>
